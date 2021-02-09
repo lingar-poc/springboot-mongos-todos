@@ -1,7 +1,10 @@
 package lingar.poc.springbootmongostodos.beans;
 
 import org.springframework.data.annotation.Id;
+import lombok.Data;
 
+
+@Data
 public class Todo {
 
 	@Id
