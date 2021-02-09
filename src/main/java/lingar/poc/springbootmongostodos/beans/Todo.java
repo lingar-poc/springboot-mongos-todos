@@ -13,8 +13,4 @@ public class Todo {
 	public String description;
 	public boolean marked;
 
-	public Todo() {
-
-	}
-
 }
