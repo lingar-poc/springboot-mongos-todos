@@ -2,11 +2,11 @@ package lingar.poc.springbootmongostodos.controllers;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,10 +33,25 @@ public class WebServices {
 		return repository.findAll();
 	}
 
-	//http://localhost:8080/ws/getTodo/PUT_HERE_ONE_OF_UPDATED_IDS(SEE LOGS)
+	// http://localhost:8080/ws/getTodo/PUT_HERE_ONE_OF_UPDATED_IDS(SEE LOGS)
 	@RequestMapping(value = "/getTodo/{id}")
 	public Todo getTodo(@PathVariable(value = "id") String id) {
 		return repository.findById(id).get();
+	}
+
+	//You can check this method with postman. 
+	@RequestMapping(value = "/todoAction", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Todo createTodo(@RequestBody Todo newItem) {
+		try {
+			repository.save(newItem);
+			return newItem;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println("error occurred :" + e.getStackTrace());
+			return null;
+		}
+
 	}
 
 }

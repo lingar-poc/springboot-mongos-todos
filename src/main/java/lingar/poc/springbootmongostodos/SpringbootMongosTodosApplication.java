@@ -32,7 +32,7 @@ public class SpringbootMongosTodosApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		repository.deleteAll();
+//		repository.deleteAll();
 		Todo t1 = new Todo("go to sleep", false);
 		Todo t2 = new Todo("Eat something", false);
 		Todo t3 = new Todo("Be happy", false);
