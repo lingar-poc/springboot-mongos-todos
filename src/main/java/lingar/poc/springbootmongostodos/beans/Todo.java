@@ -18,8 +18,9 @@ public class Todo {
 	}
 	@Id
 	public String id;
-	
-	public String description;
-	public boolean mark;
+	private String description;
+	private boolean mark;
 
+	
+	
 }

@@ -1,8 +1,10 @@
 package lingar.poc.springbootmongostodos.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,13 +30,13 @@ public class WebServices {
 	}
 
 	// http://localhost:8080/ws/getTodos
-	@RequestMapping(value = "/getTodos")
+	@RequestMapping(value = "/todoAction")
 	public List<Todo> getTodos() {
 		return repository.findAll();
 	}
 
 	// http://localhost:8080/ws/getTodo/PUT_HERE_ONE_OF_UPDATED_IDS(SEE LOGS)
-	@RequestMapping(value = "/getTodo/{id}")
+	@RequestMapping(value = "/todoAction/{id}")
 	public Todo getTodo(@PathVariable(value = "id") String id) {
 		return repository.findById(id).get();
 	}
@@ -47,9 +49,27 @@ public class WebServices {
 			return newItem;
 
 		} catch (Exception e) {
-			// TODO: handle exception
-			System.err.println("error occurred :" + e.getStackTrace());
+			//handle exception
+			System.err.println("error occurred :" + e.getMessage());
 			return null;
+		}
+
+	}
+
+	//You can check this method with postman. 
+	@RequestMapping(value = "/todoAction", method = RequestMethod.PUT, consumes = MediaType.TEXT_PLAIN_VALUE)
+	public boolean updateTodo(@RequestBody  String id) {
+		try {
+			Todo todo = repository.findById(id).get();
+			todo.setMark(!todo.isMark());
+			repository.save(todo);
+			
+			return true; 
+
+		} catch (Exception e) {
+			// handle exception
+			System.err.println("error occurred :" + e.getMessage());
+			return false;
 		}
 
 	}
