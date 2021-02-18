@@ -24,10 +24,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-		<!-- Package for auto generation of default constructor, etc
-		https://projectlombok.org/features/Data  -->
+		<!-- Package for auto generation of default constructor, etc https://projectlombok.org/features/Data -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
