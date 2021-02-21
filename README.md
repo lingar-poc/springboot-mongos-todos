@@ -1,11 +1,19 @@
-# springboot-mongos-todos
+#springboot-mongos-todos
 Demo POC of Todo's webApp  server side with Spring-boot and mongo 
 
+<<<<<<< HEAD
 # Prerequisites
 
 For running this example you need to install and run MongoDB, and to have proper environment for running spring boot with Maven.
 
 # Connecting a front-end
+=======
+#Prerequisites
+
+For running this example you need to install and run MongoDB, and to have proper environment for running spring boot with Maven.
+
+#Connecting a front-end
+>>>>>>> branch 'master' of https://github.com/lingar-poc/springboot-mongos-todos
 If you want to see it working with front-end go ahead and grab and run this project: 
 
 https://github.com/lingar-poc/react-todos-frontend 
