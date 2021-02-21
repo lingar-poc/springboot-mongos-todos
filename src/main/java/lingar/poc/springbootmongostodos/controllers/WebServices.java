@@ -29,7 +29,7 @@ public class WebServices {
 		return "Server is Online";
 	}
 
-	// http://localhost:8080/ws/getTodos
+	// http://localhost:8080/ws/todoAction
 	@RequestMapping(value = "/todoAction")
 	public List<Todo> getTodos() {
 		return repository.findAll();
