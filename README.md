@@ -5,10 +5,6 @@ Demo POC of Todo's webApp  server side with Spring-boot and mongo
 
 For running this example you need to install and run MongoDB, and to have proper environment for running spring boot with Maven.
 
-# Prerequisites
-
-For running this example you need to install and run MongoDB, and to have proper environment for running spring boot with Maven.
-
 # Connecting a front-end
 If you want to see it working with front-end go ahead and grab and run this project: 
 
